@@ -17,16 +17,10 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Arbed
-        - Paused
-        - Unpaused
       abis:
         - name: SonicArbContract
           file: ./abis/SonicArbContract.json
       eventHandlers:
         - event: Arbed(indexed address,address,uint256,uint256,uint256)
           handler: handleArbed
-        - event: Paused(address)
-          handler: handlePaused
-        - event: Unpaused(address)
-          handler: handleUnpaused
       file: ./src/sonic-arb-contract.ts

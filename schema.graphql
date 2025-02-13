@@ -9,19 +9,3 @@ type Arbed @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
-
-type Paused @entity(immutable: true) {
-  id: Bytes!
-  account: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
-type Unpaused @entity(immutable: true) {
-  id: Bytes!
-  account: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
