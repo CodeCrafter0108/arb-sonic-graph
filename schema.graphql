@@ -1,0 +1,27 @@
+type Arbed @entity(immutable: true) {
+  id: Bytes!
+  executor: Bytes! # address
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  profit: BigInt! # uint256
+  fees: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Paused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Unpaused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

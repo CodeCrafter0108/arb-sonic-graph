@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SonicArbContract
+    network: sonic
+    source:
+      address: "0x318845A1a1b0d43a59D3478c2430450d8F1E1a8d"
+      abi: SonicArbContract
+      startBlock: 5379587
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Arbed
+        - Paused
+        - Unpaused
+      abis:
+        - name: SonicArbContract
+          file: ./abis/SonicArbContract.json
+      eventHandlers:
+        - event: Arbed(indexed address,address,uint256,uint256,uint256)
+          handler: handleArbed
+        - event: Paused(address)
+          handler: handlePaused
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/sonic-arb-contract.ts
